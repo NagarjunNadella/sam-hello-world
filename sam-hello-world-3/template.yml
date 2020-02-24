@@ -14,10 +14,10 @@ Resources:
             Method: GET
       Policies:
         - SNSPublishMessagePolicy:
-            TopicName: !GetAtt HelloWorldTopic.TopicName
+            TopicName: My_Iot_SNS_Topic
       Environment:
         Variables:
-          SNS_TOPIC_ARN: !Ref HelloWorldTopic
+          SNS_TOPIC_ARN: arn:aws:sns:us-east-2:003452931386:My_Iot_SNS_Topic
   HelloWorldTopic:
     Type: AWS::SNS::Topic
     Properties:
